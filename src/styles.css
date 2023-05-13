@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Mukta:wght@200;300;400;500;600;700;800&family=Patrick+Hand&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+html {
+    font-family: 'Itim', cursive;
+    scroll-behavior: smooth;
+    background-color: #191D24;
+}
+
+.color1 {
+    color: #63CCCA;
+}
+
+.color2 {
+    color: #FF7474;
+}
+
+.background-color{
+    background-color: #191D24;
+}
+
+.subtitle1{
+    font-family: 'Mukta', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 0.5rem;
+}
+
+.font{
+    font-family: 'Itim', cursive;
+}

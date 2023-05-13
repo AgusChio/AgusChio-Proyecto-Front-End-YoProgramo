@@ -1,0 +1,34 @@
+
+
+.img-certification{
+    width: 90%;
+}
+
+.font{
+    font-family: 'Itim', cursive;
+}
+
+.container-fechas{
+    width: 90%;
+}
+
+.fechas{
+    width: 50%;
+}
+
+
+@media screen and (min-width: 929px) and (max-width: 2000px) {
+    .img-certification{
+        width: 40%;
+    }
+
+    .certifications{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .container-title-img-certification{
+        width: 50% !important;
+    }
+}

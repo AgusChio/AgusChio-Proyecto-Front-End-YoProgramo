@@ -1,0 +1,55 @@
+.image-AC {
+    background-color: #63CCCA;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+}
+
+.container-image-AC {
+    height: 50vh;
+    width: 30%;
+}
+
+.image{
+    width: fit-content;
+    position: absolute;
+    margin-top: -24rem;
+    left: 5rem;
+    background-color: transparent;
+}
+
+.container-hi-titulo-nombre{
+    width: 100%;
+}
+
+.paragraph-hi {
+    width: 36%;
+    height: 10vh;
+    margin-top: 10rem;
+    margin-left: 12rem;
+    font-size:2rem;
+    color: #FF7474;
+    font-weight: 900;
+}
+
+.container-titulo-nombre{
+    width: 100%;
+    margin-left: 6rem;
+}
+
+.parrafos-sobre-mi-posicion{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-parrafos{
+    flex-wrap: wrap;
+    height: fit-content;
+}
+
+.parrafo1{
+    width: 48%;
+    height: fit-content;
+}
