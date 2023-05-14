@@ -1,29 +1,29 @@
 <section class="font w-100 d-flex background-color" id="sobreMi">
-    <div class="container-image-AC d-flex justify-content-center flex-column text-light flex-wrap">
+    <div class="container-image-AC d-flex justify-content-end flex-column text-light flex-wrap">
         <div class="image" >
             <img class="image-AC border" src="{{ persona.imagen }}"
                 alt="Agustina Chiodini Image">
         </div>
-        <div class="container-hi-titulo-nombre">
-            <div>
-                <p class="paragraph-hi">Hola!</p>
-            </div>
-            <div class="container-titulo-nombre">
-                <h3 class="nombreApellido">Soy <span class="color1">{{ persona.nombre }} {{ persona.apellido }}</span></h3>
-                <h4 class="tituloDev"> <span class="color2">{{ persona.titulo }}</span></h4>
-                <p class="paragraph-body mt-5 p-2 fs-6 w-100 text-justify"> {{ persona.descripcion }} </p>
-            </div>
-        </div>
     </div>
 
-
-    <div class="parrafos-sobre-mi-posicion">
-        <div class="container-parrafos text-light w-100 d-flex flex-row justify-content-between p-2">
-            <div class="parrafo1 fs-5">
-                {{ sobreMi.parrafo1 }}
+    <div class="container-hi-titulo-parrafos w-100 d-flex flex-wrap">
+        <div class="container-hi-titulo-nombre">
+            <div>
+                <p class="paragraph-hi w-100 text-center">Hola!</p>
             </div>
-            <div class="parrafo1 fs-5">
-                {{ sobreMi.parrafo2 }}
+            <div class="container-titulo-nombre text-light  w-100 text-center">
+                <h3 class="nombreApellido">Soy <span class="color1">{{ persona.nombre }} {{ persona.apellido }}</span></h3>
+                <h4 class="tituloDev"> <span class="color2">{{ persona.titulo }}</span></h4>
+            </div>
+        </div>
+        <div class="parrafos-sobre-mi-posicion">
+            <div class="container-parrafos text-light w-100 d-flex flex-row justify-content-between p-2">
+                <div class="parrafo1 fs-5">
+                    {{ sobreMi.parrafo1 }}
+                </div>
+                <div class="parrafo1 fs-5">
+                    {{ sobreMi.parrafo2 }}
+                </div>
             </div>
         </div>
     </div>
@@ -32,5 +32,4 @@
         <a href="{{ sobreMi.cv }}" class="ov-btn-slide-left button-download text-light p-2 mb-3 mt-2">Visualizar Currículum <span class="iconify"
             data-icon="material-symbols:sim-card-download-rounded"></span></a>
     </div>
-    
 </section>

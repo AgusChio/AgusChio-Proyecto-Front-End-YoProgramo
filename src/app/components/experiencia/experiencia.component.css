@@ -75,8 +75,7 @@
 }
 
 
-/* TABLET Y PANTALLAS CHICAS */
-@media screen and (min-width: 700px) and (max-width: 1420px) {
+@media screen and (min-width: 700px) and (max-width: 1419px) {
     .ag-services_box {
         display: flex;
         justify-content: center;
@@ -93,7 +92,7 @@
     }
 }
 
-/* Pantallas grandes */
+
 @media screen and (min-width: 1420px) and (max-width: 1700px) {
     .ag-services_box {
         display: flex;

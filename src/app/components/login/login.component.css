@@ -1,0 +1,24 @@
+.colorButton{
+    background-color: #63CCCA;
+    border: none;
+}
+
+.colorButton:hover{
+    background: #48a2a1;
+}
+
+@media screen and (min-width: 300px) and (max-width: 720px){
+    .container-login-logout{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .all-buttons{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    
+}

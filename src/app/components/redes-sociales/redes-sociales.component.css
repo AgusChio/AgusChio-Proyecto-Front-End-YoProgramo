@@ -27,8 +27,27 @@
     margin-right: 10px;
 }
 
-
 .nav-item{
     display: flex;
     align-items: center;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 720px) {
+    .navbar-text{
+        width: 100%;
+    }
+
+    .navbar-nav{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-item{
+        justify-content: center;
+        width: 25%;
+    }
 }

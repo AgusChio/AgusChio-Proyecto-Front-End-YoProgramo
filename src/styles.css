@@ -25,6 +25,10 @@ html {
     background-color: #191D24;
 }
 
+.background-color-footer{
+    background-color: #111318;
+}
+
 .subtitle1{
     font-family: 'Mukta', sans-serif;
     font-size: 5rem;
@@ -34,4 +38,16 @@ html {
 
 .font{
     font-family: 'Itim', cursive;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 1420px){
+    .subtitle1{
+        font-size: 3rem;
+    }
+
+    .footer{
+        width: 80%;
+        margin: auto;
+    }
 }
