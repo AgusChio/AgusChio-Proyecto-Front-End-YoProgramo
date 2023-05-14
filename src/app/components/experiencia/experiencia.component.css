@@ -74,15 +74,6 @@
     transition: all .5s ease;
 }
 
-.ag-services_item:nth-child(2n) .ag-services-item_bg {
-    background-color: #63CCCA;
-}
-
-
-.ag-services_item:nth-child(3n) .ag-services-item_bg {
-    background-color: #FF7474;
-}
-
 
 /* TABLET Y PANTALLAS CHICAS */
 @media screen and (min-width: 700px) and (max-width: 1420px) {

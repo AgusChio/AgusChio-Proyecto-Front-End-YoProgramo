@@ -1,19 +1,26 @@
-.box {
+.container-cards-proyects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
     transition: box-shadow .3s;
     border-radius: 10px;
     border: 1px solid #000000;
     background: #000000;
-    float: left;
+    margin: 10px;
+    flex-basis: calc(100% / 3 - 20px);
 }
 
-.box:hover {
+.card:hover {
     box-shadow: 3px 3px 11px #F59B71;
 }
 
 .btn-primary {
     background-color: #F59B71;
     border: none;
-    height: 5vh;
+    height: 2.5em;
 }
 
 .btn-primary:hover {
@@ -23,24 +30,22 @@
 
 
 .descripcion{
-    height: 30vh;
+    height: 30%;
     overflow-y: scroll;
 }
 
 .card-title{
-    height: 010vh
+    height: 10%;
 }
 
-@media screen and (min-width: 929px) and (max-width: 1700px) {
-
-    .btn-primary{
-        height: 5vh;
+@media screen and (max-width: 768px) {
+    .card {
+        flex-basis: calc(100% - 20px);
     }
 }
 
-@media screen and (min-width: 1600px) and (max-width: 1999px) {
-
-    .btn-primary{
-        height: 5.5vh;
+@media screen and (min-width: 1200px) {
+    .btn-primary {
+        height: 2.5em;
     }
 }

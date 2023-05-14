@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RedesSocialesComponent } from './components/redes-sociales/redes-sociales.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 
+import  {  NgCircleProgressModule  }  from  'ng-circle-progress' ;
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,17 @@ import { EducacionComponent } from './components/educacion/educacion.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // Especifique ng-circle-progress como una importación 
+    NgCircleProgressModule . forRoot ( { 
+      // establece los valores predeterminados aquí 
+      radius: 100 , 
+      outerStrokeWidth: 16 , 
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    } )
   ],
   providers: [],
   bootstrap: [AppComponent]
