@@ -1,99 +1,31 @@
 <div class="container-fluid background-color font text-light" id="skills">
-    <div class="list-group-flush w-90">
+    <div class="w-100">
         <h2 class="subtitle1 text-center p-5 w-100 d-flex justify-content-center mb-5 text-light"> Hard skills</h2>
-
-        <div class="list-group-item m-auto">
-            <!--  -->
-            <div class="row row-cols-auto text-center m-auto ">
-                <div class="col-12 col-sm my-2">
-                    <div class="row m-auto">
-                        <circle-progress 
-                        [percent]="85" 
-                        [radius]="100" 
-                        [outerStrokeWidth]="16" 
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'" 
-                        [innerStrokeColor]="'#C7E596'" 
-                        [animation]="true"
-                        [animationDuration]="300"></circle-progress>
-                    </div>
-                    <div class="row text-center">
-                        <p class="fw-bold">html</p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm my-2">
-                    <div class="row m-auto">
-                        <circle-progress 
-                        [percent]="85" 
-                        [radius]="100" 
-                        [outerStrokeWidth]="16" 
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'" 
-                        [innerStrokeColor]="'#C7E596'" 
-                        [animation]="true"
-                        [animationDuration]="300"></circle-progress>
-                    </div>
-                    <div class="row text-center">
-                        <p class="fw-bold">html</p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm my-2">
-                    <div class="row m-auto">
-                        <circle-progress 
-                        [percent]="85" 
-                        [radius]="100" 
-                        [outerStrokeWidth]="16" 
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'" 
-                        [innerStrokeColor]="'#C7E596'" 
-                        [animation]="true"
-                        [animationDuration]="300"></circle-progress>
-                    </div>
-                    <div class="row text-center">
-                        <p class="fw-bold">html</p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm my-2">
-                    <div class="row m-auto">
-                        <circle-progress 
-                        [percent]="85" 
-                        [radius]="100" 
-                        [outerStrokeWidth]="16" 
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'" 
-                        [innerStrokeColor]="'#C7E596'" 
-                        [animation]="true"
-                        [animationDuration]="300"></circle-progress>
-                    </div>
-                    <div class="row text-center">
-                        <p class="fw-bold">html</p>
-                    </div>
-                </div>
+        <div class="all-circles w-100">
+            <div class="m-auto container-circle-title d-flex flex-wrap">
+                <div class="circle m-auto" *ngFor="let skill of hardSkills">
+                    <circle-progress 
+                    [percent]="skill.porcentaje" 
+                    [outerStrokeColor]="skill.colorExterno"
+                    [innerStrokeColor]="skill.colorInterno" 
+                    [imageSrc]="skill.imgsrc"></circle-progress>
+                    <p class="fw-bold text-center">{{ skill.nombreSkill }}</p>
+            </div>
             </div>
         </div>
     </div>
-    <div class="list-group-flush w-90">
+    <div class="w-100">
         <h2 class="subtitle1 text-center p-5 w-100 d-flex justify-content-center mb-5 text-light"> Soft skills</h2>
-
-        <div class="list-group-item m-auto">
-            <!--  -->
-            <div class="row row-cols-auto text-center m-auto ">
-                <div class="col-12 col-sm my-2">
-                    <div class="row m-auto">
-                        <circle-progress 
-                        [percent]="85" 
-                        [radius]="100" 
-                        [outerStrokeWidth]="16" 
-                        [innerStrokeWidth]="8"
-                        [outerStrokeColor]="'#78C000'" 
-                        [innerStrokeColor]="'#C7E596'" 
-                        [animation]="true"
-                        [animationDuration]="300"></circle-progress>
-                    </div>
-                    <div class="row text-center">
-                        <p class="fw-bold">html</p>
-                    </div>
-                </div>
+        <div class="all-circles w-100">
+            <div class="m-auto container-circle-title d-flex flex-wrap">
+                <div class="circle m-auto" *ngFor="let skill of softSkills">
+                    <circle-progress 
+                    [percent]="skill.porcentaje" 
+                    [outerStrokeColor]="skill.colorExterno"
+                    [innerStrokeColor]="skill.colorInterno" 
+                    [imageSrc]="skill.imgsrc"></circle-progress>
+                    <p class="fw-bold text-center">{{ skill.nombreSkill }}</p>
+            </div>
             </div>
         </div>
     </div>

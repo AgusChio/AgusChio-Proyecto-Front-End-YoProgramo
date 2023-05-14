@@ -1,28 +1,16 @@
 <div class="container-certifications background-color font text-light">
-    <h2 class="subtitle1 p-3 w-100 d-flex justify-content-center mb-3 text-light" id="Educacion"> Educacion </h2>
-    <section class="certifications">
+    <h2 class="subtitle1 p-3 w-100 d-flex justify-content-center mb-3 text-light" id="educacion"> Educacion </h2>
+    <section class="certifications" *ngFor="let Educacion of educacion">
         <div class="container-title-img-certification w-100 d-flex justify-content-center mb-3">
             <div class="class-container-img w-100 d-flex justify-content-center">
-                <img src="https://res.cloudinary.com/dhcurgqlc/image/upload/v1683863309/insignia_JAVA_cxpb1z.png" alt="Insignia De MindhubLA - Desarrolladora Full-Stack Java" class="img-certification">
+                <img src="{{ Educacion.imagenCertificado }}" alt="{{ Educacion.titulo }}" class="img-certification">
             </div>
             <h3 class="title-certification text-light p-2 text-center mt-3 mb-3">
-                Certificado/Insignia MindhubLA - Desarrolladora Full-Stack Java
+                {{ Educacion.titulo }}
             </h3>
             <div class="container-fechas d-flex">
-                <p class="fechas fs-4"><span class="color1"> Inicio: </span> 2022-10-11</p>
-                <p class="fechas fs-4"><span class="color2"> Fin: </span> 2023-02-05</p>
-            </div>
-        </div>
-        <div class="container-title-img-certification w-100 d-flex justify-content-center mb-3 mt-5">
-            <div class="class-container-img w-100 d-flex justify-content-center mb-4">
-                <img src="https://res.cloudinary.com/dhcurgqlc/image/upload/v1683863267/argentina_programa_2022-1_mmgc6w.png" alt="Certificado de Se Programar - Argetina Programa" class="img-certification mb-2">
-            </div>
-            <h3 class="title-certification-2 text-light p-2 text-center mt-5 mb-3">
-                Certificado de Se Programar - Argentina Programa - Aprendiendo Lógica
-            </h3>
-            <div class="container-fechas d-flex flex-wrap">
-                <p class="fechas fs-4"><span class="color1"> Inicio: </span> 2022-04-11</p>
-                <p class="fechas fs-4"><span class="color2"> Fin: </span> 2022-06-11</p>
+                <p class="fechas fs-4"><span class="color1"> Inicio: </span> {{ Educacion.inicio }}</p>
+                <p class="fechas fs-4"><span class="color2"> Fin: </span> {{ Educacion.fin }} </p>
             </div>
         </div>
     </section>

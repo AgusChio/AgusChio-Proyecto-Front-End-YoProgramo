@@ -1,7 +1,7 @@
-<section class="font w-100 d-flex background-color">
+<section class="font w-100 d-flex background-color" id="sobreMi">
     <div class="container-image-AC d-flex justify-content-center flex-column text-light flex-wrap">
         <div class="image" >
-            <img class="image-AC border" src="https://res.cloudinary.com/dhcurgqlc/image/upload/v1683826202/Image-portfolio-Agustina-Chiodini_hxyltd.png"
+            <img class="image-AC border" src="{{ persona.imagen }}"
                 alt="Agustina Chiodini Image">
         </div>
         <div class="container-hi-titulo-nombre">
@@ -9,8 +9,9 @@
                 <p class="paragraph-hi">Hola!</p>
             </div>
             <div class="container-titulo-nombre">
-                <h3 class="nombreApellido">Soy <span class="color1">Agustina Chiodini</span></h3>
-                <h4 class="tituloDev"> <span class="color2">Desarrolladora Full-Stack jr.</span></h4>
+                <h3 class="nombreApellido">Soy <span class="color1">{{ persona.nombre }} {{ persona.apellido }}</span></h3>
+                <h4 class="tituloDev"> <span class="color2">{{ persona.titulo }}</span></h4>
+                <p class="paragraph-body mt-5 p-2 fs-6 w-100 text-justify"> {{ persona.descripcion }} </p>
             </div>
         </div>
     </div>
@@ -19,12 +20,17 @@
     <div class="parrafos-sobre-mi-posicion">
         <div class="container-parrafos text-light w-100 d-flex flex-row justify-content-between p-2">
             <div class="parrafo1 fs-5">
-                Como Desarrolladora Full-Stack en Java, me destaco por mi capacidad para trabajar en equipo y mi compromiso con el éxito del proyecto. Con mi formación en MindHub y más de 700 horas de práctica en entornos laborales simulados con metodologías ágiles SCRUM, puedo adaptarme fácilmente a diferentes desafíos y asegurar la calidad de las soluciones tecnológicas que desarrollo.
+                {{ sobreMi.parrafo1 }}
             </div>
             <div class="parrafo1 fs-5">
-                He trabajado con HTML, CSS, Bootstrap, JavaScript, Vue.js, Spring Framework, PostgreSQL, Postman, Trello y Figma, y los he implementado tanto en proyectos individuales como grupales. Si quieres ver ejemplos de mi trabajo, puedes consultar mi GitHub, donde encontrarás algunos de mis proyectos más recientes y relevantes.
+                {{ sobreMi.parrafo2 }}
             </div>
         </div>
+    </div>
+
+    <div class="d-flex justify-content-center w-100">
+        <a href="{{ sobreMi.cv }}" class="ov-btn-slide-left button-download text-light p-2 mb-3 mt-2">Visualizar Currículum <span class="iconify"
+            data-icon="material-symbols:sim-card-download-rounded"></span></a>
     </div>
     
 </section>

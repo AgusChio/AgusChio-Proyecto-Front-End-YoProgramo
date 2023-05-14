@@ -12,7 +12,7 @@ export class ProyectosService {
 
   private URL = 'https://backe-end-portafolio.onrender.com/api/proyectos'
 
-  public listaCompleta(): Observable<Proyectos[]> {
+  public getProyectos(): Observable<Proyectos[]> {
     return this.http.get<Proyectos[]>(`${this.URL}/todosProyectos`);
   }
 

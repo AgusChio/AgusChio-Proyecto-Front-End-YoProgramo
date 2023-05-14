@@ -1,26 +1,30 @@
-.container-cards-proyects {
-    display: flex;
+.all-cards{
+    width: 90%;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
+}
+
+.container-cards-proyects {
+    width: 38%;
 }
 
 .card {
     transition: box-shadow .3s;
     border-radius: 10px;
-    border: 1px solid #000000;
-    background: #000000;
-    margin: 10px;
-    flex-basis: calc(100% / 3 - 20px);
+}
+
+.background-card-color{
+    background-color: #12151a !important;
 }
 
 .card:hover {
-    box-shadow: 3px 3px 11px #F59B71;
+    box-shadow: 3px 3px 8px #F59B71;
 }
 
 .btn-primary {
     background-color: #F59B71;
     border: none;
-    height: 2.5em;
+    height: 3vh;
 }
 
 .btn-primary:hover {
@@ -30,7 +34,7 @@
 
 
 .descripcion{
-    height: 30%;
+    height:8vh;
     overflow-y: scroll;
 }
 
@@ -38,14 +42,22 @@
     height: 10%;
 }
 
-@media screen and (max-width: 768px) {
-    .card {
-        flex-basis: calc(100% - 20px);
+@media screen and (max-width: 767px) {
+    .all-cards{
+        flex-direction: column;
+        margin: auto;
     }
-}
 
-@media screen and (min-width: 1200px) {
+    .container-cards-proyects {
+        width: 90%;
+    }
+
+    .descripcion{
+        height:14vh;
+        overflow-y: scroll;
+    }
+
     .btn-primary {
-        height: 2.5em;
+        height: 5vh;
     }
 }

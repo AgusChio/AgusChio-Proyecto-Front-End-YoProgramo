@@ -1,10 +1,10 @@
 export class Experiencia {
     id!: number;
-    tituloServicio: string;
+    tituloServicios: string;
     descripcion: string;
 
     constructor(tituloServicio: string, descripcion: string){
-        this.tituloServicio = tituloServicio;
+        this.tituloServicios = tituloServicio;
         this.descripcion = descripcion;
     }
 }

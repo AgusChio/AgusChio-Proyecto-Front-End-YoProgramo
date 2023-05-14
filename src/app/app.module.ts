@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +17,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RedesSocialesComponent } from './components/redes-sociales/redes-sociales.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 
-import  {  NgCircleProgressModule  }  from  'ng-circle-progress' ;
+import  {  NgCircleProgressModule  }  from  'ng-circle-progress';
+import { ScrollToTopComponent } from './components/shared/scroll-to-top/scroll-to-top.component' ;
 
 @NgModule({
   declarations: [
@@ -29,11 +32,14 @@ import  {  NgCircleProgressModule  }  from  'ng-circle-progress' ;
     FooterComponent,
     LoginComponent,
     RedesSocialesComponent,
-    EducacionComponent
+    EducacionComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule ,
     // Especifique ng-circle-progress como una importación 
     NgCircleProgressModule . forRoot ( { 
       // establece los valores predeterminados aquí 

@@ -13,7 +13,7 @@ export class EducacionService {
   private URL = 'https://backe-end-portafolio.onrender.com/api/educacion'
 
 
-  public listaCompleta(): Observable<Educacion[]> {
+  public getEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.URL}/todasEducaciones`);
   }
 

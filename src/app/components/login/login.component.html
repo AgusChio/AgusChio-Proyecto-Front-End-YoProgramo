@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-end p-4">
-    <button  type="button" class="btn btn-primary colorButton" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    <button  *ngIf="!isLogged" type="button" class="btn btn-primary colorButton" data-bs-toggle="modal" data-bs-target="#exampleModal"
         data-bs-whatever="@getbootstrap">Login <span class="iconify" data-icon="solar:login-2-outline"></span></button>
 
-    <button class="btn bg-dark text-light">
+    <button (click)="onLogOut()" *ngIf="isLogged" class="btn bg-dark text-light">
         LogOut
     </button>
 
@@ -15,20 +15,21 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form  novalidate>
+                    <form #f="ngForm" novalidate>
                         <div class="mb-3">
                             <label for="nombreUsuario" class="col-form-label">Usuario:</label>
-                            <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required placeholder="Ingrese su Usuario">
+                            <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario"
+                                [(ngModel)]="nombreUsuario" required placeholder="Ingrese su Usuario">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="col-form-label">Contraseña:</label>
                             <input type="password" class="form-control" id="password" name="password"
-                                required placeholder="Ingrese su Contraseña">
+                                [(ngModel)]="password" required placeholder="Ingrese su Contraseña">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary buttonCancelar"
                                 data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary buttonLogIn" >LogIn</button>
+                            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary buttonLogIn" (click)="onLogin()">LogIn</button>
                         </div>
                     </form>
                 </div>

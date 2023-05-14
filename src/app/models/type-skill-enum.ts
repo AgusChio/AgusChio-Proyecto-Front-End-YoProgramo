@@ -1,4 +1,4 @@
-export interface TypeSkillEnum {
-    hard: string;
-    soft: string;
+export enum TypeSkillEnum {
+    SOFT = 'SOFT',
+    HARD = 'HARD'
 }

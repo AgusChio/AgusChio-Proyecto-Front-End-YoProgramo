@@ -12,7 +12,7 @@ export class SobreMiService {
 
   private URL = 'https://backe-end-portafolio.onrender.com/api/sobreMi'
 
-  public listaCompleta(): Observable<SobreMi[]> {
+  public getSobreMi(): Observable<SobreMi[]> {
     return this.http.get<SobreMi[]>(`${this.URL}/todoSobreMi`);
   }
 
