@@ -11,7 +11,7 @@ export class EducacionService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'http://localhost:8080/api/educacion'
+  private URL = 'https://backe-end-portafolio.onrender.com/api/educacion'
 
 
   public getEducacion(): Observable<Educacion[]> {

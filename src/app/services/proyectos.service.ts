@@ -11,7 +11,7 @@ export class ProyectosService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'http://localhost:8080/api/proyectos'
+  private URL = 'https://backe-end-portafolio.onrender.com/api/proyectos'
 
   public getProyectos(): Observable<Proyectos[]> {
     return this.http.get<Proyectos[]>(`${this.URL}/todosProyectos`);

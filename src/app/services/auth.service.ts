@@ -9,7 +9,7 @@ import { NuevoUsuario } from '../models/nuevo-usuario';
   providedIn: 'root',
 })
 export class AuthService {
-  private authURL = 'http://localhost:8080/auth/';
+  private authURL = 'https://backe-end-portafolio.onrender.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 

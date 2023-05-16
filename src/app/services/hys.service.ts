@@ -12,7 +12,7 @@ export class HysService {
 
   constructor(private http: HttpClient) { }
 
-  private URL = 'http://localhost:8080/api/skills';
+  private URL = 'https://backe-end-portafolio.onrender.com/api/skills';
 
   public getSkills(): Observable<Hys[]> {
     return this.http.get<Hys[]>(`${this.URL}/todasSkills`);
