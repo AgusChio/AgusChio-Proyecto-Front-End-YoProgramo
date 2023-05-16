@@ -105,6 +105,10 @@
     transition: all 0.35s;
 }
 
+.modal-edit{
+    width: 70%;
+}
+
 @media screen and (min-width: 300px) and (max-width: 720px){
     .image{
         left: 4.5rem;

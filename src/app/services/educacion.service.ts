@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Educacion } from '../models/educacion';
+import { ApplicationEducacion } from '../models/application-educacion';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class EducacionService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'https://backe-end-portafolio.onrender.com/api/educacion'
+  private URL = 'http://localhost:8080/api/educacion'
 
 
   public getEducacion(): Observable<Educacion[]> {
@@ -25,7 +26,7 @@ export class EducacionService {
     return this.http.post<Educacion>(`${this.URL}/agregar`, educaciones);
   }
 
-  public update(id: number, educaciones : Educacion): Observable<any> {
+  public update(id: number, educaciones : ApplicationEducacion): Observable<any> {
     return this.http.put<any>(`${this.URL}/actualizar/${id}`, educaciones);
   }
 

@@ -3,13 +3,15 @@
         <h2 class="subtitle1 text-center p-5 w-100 d-flex justify-content-center mb-5 text-light"> Hard skills</h2>
         <div class="all-circles w-100">
             <div class="m-auto container-circle-title d-flex flex-wrap">
-                <div class="circle m-auto" *ngFor="let skill of hardSkills">
+                <div class="circle m-auto" *ngFor="let skills of hardSkills">
                     <circle-progress 
-                    [percent]="skill.porcentaje" 
-                    [outerStrokeColor]="skill.colorExterno"
-                    [innerStrokeColor]="skill.colorInterno" 
-                    [imageSrc]="skill.imgsrc"></circle-progress>
-                    <p class="fw-bold text-center">{{ skill.nombreSkill }}</p>
+                    [percent]="skills.porcentaje" 
+                    [outerStrokeColor]="skills.colorExterno"
+                    [innerStrokeColor]="skills.colorInterno" 
+                    [imageSrc]="skills.imgsrc"></circle-progress>
+                    <p class="fw-bold text-center">{{ skills.nombreSkill }}</p>
+                    <app-editar-skills-modal [id]="skills.id" [hardSkills]="hardSkills" [data]="skills"></app-editar-skills-modal>
+                    <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)=" deleteSkills(skills.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
             </div>
             </div>
         </div>
@@ -18,13 +20,15 @@
         <h2 class="subtitle1 text-center p-5 w-100 d-flex justify-content-center mb-5 text-light"> Soft skills</h2>
         <div class="all-circles w-100">
             <div class="m-auto container-circle-title d-flex flex-wrap">
-                <div class="circle m-auto" *ngFor="let skill of softSkills">
+                <div class="circle m-auto" *ngFor="let skills of softSkills">
                     <circle-progress 
-                    [percent]="skill.porcentaje" 
-                    [outerStrokeColor]="skill.colorExterno"
-                    [innerStrokeColor]="skill.colorInterno" 
-                    [imageSrc]="skill.imgsrc"></circle-progress>
-                    <p class="fw-bold text-center">{{ skill.nombreSkill }}</p>
+                    [percent]="skills.porcentaje" 
+                    [outerStrokeColor]="skills.colorExterno"
+                    [innerStrokeColor]="skills.colorInterno" 
+                    [imageSrc]="skills.imgsrc"></circle-progress>
+                    <p class="fw-bold text-center">{{ skills.nombreSkill }}</p>
+                    <app-editar-skills-modal [id]="skills.id" [softSkills]="softSkills" [data]="skills"></app-editar-skills-modal>
+                    <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)=" deleteSkills(skills.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
             </div>
             </div>
         </div>

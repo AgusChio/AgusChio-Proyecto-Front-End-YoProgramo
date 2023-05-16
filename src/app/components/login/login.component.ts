@@ -51,6 +51,10 @@ export class LoginComponent implements OnInit {
           icon: 'success',
           text: 'Inicio de sesión exitoso',
           timer: 1500
+        }).then(() => {
+          setTimeout(() => {
+            location.reload();
+          }, 100);
         });
       },
       (err) => {
@@ -71,6 +75,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
   onLogOut(): void {
     this.tokenService.logOut();
     this.isLogged = false;
@@ -82,8 +87,11 @@ export class LoginComponent implements OnInit {
       icon: 'success',
       title: 'Sesión cerrada correctamente',
       timer: 1500
+    }).then(() => {
+      setTimeout(() => {
+        location.reload();
+      }, 100);
     });
-    this.router.navigate(['']);
   }
 
 }

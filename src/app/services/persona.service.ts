@@ -7,16 +7,15 @@ import { Persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  private URL = 'https://backe-end-portafolio.onrender.com/api/persona'
+  private URL = 'http://localhost:8080/api/persona'
 
   constructor(private http: HttpClient) { }
 
   public getPersona(): Observable<Persona[]> {
     return this.http.get<Persona[]>(`${this.URL}/todasPersonas`);
   }
-  
 
-  public editarPersona(persona: Persona): Observable<Persona> {
-    return this.http.put<Persona>(`${this.URL}/actualizar`, persona);
+  public editarPersona(id: number, persona: Persona): Observable<Persona> {
+    return this.http.put<Persona>(`${this.URL}/actualizar/${id}`, persona);
   }
 }

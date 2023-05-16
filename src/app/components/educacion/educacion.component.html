@@ -13,5 +13,7 @@
                 <p class="fechas fs-4"><span class="color2"> Fin: </span> {{ Educacion.fin }} </p>
             </div>
         </div>
+        <app-editar-educacion-modal [id]="Educacion.id" [data]="Educacion"></app-editar-educacion-modal>
+        <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)="deleteEducacion(Educacion.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
     </section>
 </div>

@@ -21,6 +21,8 @@
                     </div>
                 </div>
             </div>
+            <app-editar-proyectos-modal [id]="Proyecto.id" [data]="Proyecto"></app-editar-proyectos-modal>
+            <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)="deleteExperiencia(Proyecto.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
         </section>
     </div>
 </div>

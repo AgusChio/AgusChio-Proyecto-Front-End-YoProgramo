@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SobreMi } from '../models/sobre-mi';
+import { ApplicationSobreMi } from '../models/application-sobre-mi';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class SobreMiService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'https://backe-end-portafolio.onrender.com/api/sobreMi'
+  private URL = 'http://localhost:8080/api/sobreMi'
 
   public getSobreMi(): Observable<SobreMi[]> {
     return this.http.get<SobreMi[]>(`${this.URL}/todoSobreMi`);
@@ -24,7 +25,7 @@ export class SobreMiService {
     return this.http.post<SobreMi>(`${this.URL}/agregar`, sobreMi);
   }
 
-  public update(id: number, sobreMi : SobreMi): Observable<any> {
+  public update(id: number, sobreMi : ApplicationSobreMi): Observable<any> {
     return this.http.put<any>(`${this.URL}/actualizar/${id}`, sobreMi);
   }
 

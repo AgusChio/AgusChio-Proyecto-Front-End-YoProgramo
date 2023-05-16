@@ -1,0 +1,52 @@
+<div>
+    <ng-container *ngIf="isLogged">
+        <button type="button" class="btn btn-primary colorButton" data-bs-toggle="modal"
+            data-bs-target="#editarSobreMi" data-bs-whatever="@getbootstrap"><span class="iconify"
+                data-icon="ph:pencil-line-duotone"></span></button>
+    </ng-container>
+
+    <div class="modal fade" id="editarSobreMi" tabindex="-1" aria-labelledby="editarSobreMiLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editarSobreMiLabel">EDITAR SOBRE MI <span class="iconify"
+                        data-icon="ph:pencil-line-duotone"></span></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form #form="ngForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre: </label>
+                            <input class="form-control" type="text" id="nombre" name="nombre"
+                                [(ngModel)]="sobreMiApplication.nombre" required maxlength="50" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="apellido">Apellido: </label>
+                            <input class="form-control" type="text" id="apellido" name="apellido"
+                                [(ngModel)]="sobreMiApplication.apellido" required maxlength="50"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="parrafo1">Parrafo 1: </label>
+                            <textarea class="form-control" type="textarea" id="parrafo1" name="parrafo1" [(ngModel)]="sobreMiApplication.parrafo1" minlength="30" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="parrafo2">Parrafo 2: </label>
+                            <textarea class="form-control" type="textarea" id="parrafo2" name="parrafo2" [(ngModel)]="sobreMiApplication.parrafo2" minlength="30" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="cv">CV: </label>
+                            <input class="form-control" type="text" id="cv" name="cv"
+                                [(ngModel)]="sobreMiApplication.cv" required />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary buttonCancelar"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary buttonLogIn"
+                            (click)="onUpdateSobreMi()">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

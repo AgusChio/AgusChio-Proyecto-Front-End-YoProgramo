@@ -18,7 +18,13 @@ import { RedesSocialesComponent } from './components/redes-sociales/redes-social
 import { EducacionComponent } from './components/educacion/educacion.component';
 
 import  {  NgCircleProgressModule  }  from  'ng-circle-progress';
-import { ScrollToTopComponent } from './components/shared/scroll-to-top/scroll-to-top.component' ;
+import { ScrollToTopComponent } from './components/shared/scroll-to-top/scroll-to-top.component';
+import { EditarSobreMiModalComponent } from './components/editar-sobre-mi-modal/editar-sobre-mi-modal.component';
+import { EditarPersonaModalComponent } from './components/editar-persona-modal/editar-persona-modal.component';
+import { EditarProyectosModalComponent } from './components/editar-proyectos-modal/editar-proyectos-modal.component';
+import { EditarExperienciaModalComponent } from './components/editar-experiencia-modal/editar-experiencia-modal.component';
+import { EditarSkillsModalComponent } from './components/editar-skills-modal/editar-skills-modal.component';
+import { EditarEducacionModalComponent } from './components/editar-educacion-modal/editar-educacion-modal.component' ;
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { ScrollToTopComponent } from './components/shared/scroll-to-top/scroll-t
     LoginComponent,
     RedesSocialesComponent,
     EducacionComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    EditarSobreMiModalComponent,
+    EditarPersonaModalComponent,
+    EditarProyectosModalComponent,
+    EditarExperienciaModalComponent,
+    EditarSkillsModalComponent,
+    EditarEducacionModalComponent
   ],
   imports: [
     BrowserModule,

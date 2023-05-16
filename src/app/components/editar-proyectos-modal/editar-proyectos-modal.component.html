@@ -1,0 +1,79 @@
+<div>
+    <ng-container *ngIf="isLogged">
+        <button (click)="bucarporId()" type="button" class="btn btn-primary colorButton"
+            data-bs-toggle="modal" [attr.data-bs-target]=modalTarget data-bs-whatever="@getbootstrap">
+            <span class="iconify" data-icon="ph:pencil-line-duotone"></span>
+        </button>
+    </ng-container>
+
+    <div class="modal fade" id="{{'modaless'+data.id.toString()}}" tabindex="-1" aria-labelledby="editarEducacionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editarEducacionLabel">EDITAR PROYECTOS <span class="iconify"
+                        data-icon="ph:pencil-line-duotone"></span></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form #form="ngForm" class="needs-validation" novalidate>
+                        <div>
+                            <h2>Proyecto</h2>
+                            <div class="mb-3">
+                                <label for="nombreProyecto" class="form-label">Nombre Proyecto: </label>
+                                <input class="form-control" type="text" id="nombreProyecto" name="nombreProyecto"
+                                    [(ngModel)]="proyectoApplication.nombreProyecto" required maxlength="200" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="imagen"> Imagen del Proyecto: </label>
+                                <input class="form-control" type="text" id="imagen" name="imagen"
+                                    [(ngModel)]="proyectoApplication.imagen" minlength="200" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="descripcion">Descripcion: </label>
+                                <textarea class="form-control" type="text" id="descripcion" name="descripcion"
+                                    [(ngModel)]="proyectoApplication.descripcion" required maxlength="600"></textarea> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="fechaRealizacion"> Fecha de Realización: </label>
+                                <input class="form-control" type="text" id="fechaRealizacion" name="fechaRealizacion"
+                                    [(ngModel)]="proyectoApplication.fechaRealizacion" required maxlength="200"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="urlVideo">Ingrese la URL del video: </label>
+                                <input class="form-control" type="text" id="urlVideo" name="urlVideo"
+                                    [(ngModel)]="proyectoApplication.urlVideo" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="urlGitHub">Ingrese la URL del gitHub: </label>
+                                <input class="form-control" type="text" id="urlGitHub" name="urlGitHub"
+                                    [(ngModel)]="proyectoApplication.urlGitHub" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="urlDeploy">Ingrese la URL del deploy o puede poner que no tiene: </label>
+                                <input class="form-control" type="text" id="urlDeploy" name="urlDeploy"
+                                    [(ngModel)]="proyectoApplication.urlDeploy" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="nombre">Nombre: </label>
+                                <input class="form-control" type="text" id="nombre" name="nombre"
+                                    [(ngModel)]="proyectoApplication.nombre" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="apellido">Apellido: </label>
+                                <input class="form-control" type="text" id="apellido" name="apellido"
+                                    [(ngModel)]="proyectoApplication.apellido" required maxlength="50"/>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary buttonCancelar"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary buttonLogIn"
+                            (click)="onUpdateProyecto()">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

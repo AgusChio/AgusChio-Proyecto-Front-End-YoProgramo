@@ -1,0 +1,55 @@
+<div>
+    <ng-container *ngIf="isLogged">
+        <button (click)="bucarporId()" type="button" class="btn btn-primary colorButton"
+            data-bs-toggle="modal" [attr.data-bs-target]=modalTarget data-bs-whatever="@getbootstrap">
+            <span class="iconify" data-icon="ph:pencil-line-duotone"></span>
+        </button>
+    </ng-container>
+
+    <div class="modal fade" id="{{'modales'+data.id.toString()}}" tabindex="-1" aria-labelledby="editarExperienciaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editarExperienciaLabel">EDITAR EXPERIENCIA <span class="iconify"
+                        data-icon="ph:pencil-line-duotone"></span></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form #form="ngForm" class="needs-validation" novalidate>
+                        <div>
+                            <h2>Experiencia</h2>
+                            <div class="mb-3">
+                                <label for="tituloServicio" class="form-label">Título del Servicio: </label>
+                                <input class="form-control" type="text" id="tituloServicio" name="tituloServicio"
+                                    [(ngModel)]="experienciaAppliaction.tituloServicio" required maxlength="50" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="descripcion">Descripción: </label>
+                                <textarea class="form-control" type="textarea" id="descripcion" name="descripcion"
+                                    [(ngModel)]="experienciaAppliaction.descripcion" minlength="30" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="nombre">Nombre: </label>
+                                <input class="form-control" type="text" id="nombre" name="nombre"
+                                    [(ngModel)]="experienciaAppliaction.nombre" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="apellido">Apellido: </label>
+                                <input class="form-control" type="text" id="apellido" name="apellido"
+                                    [(ngModel)]="experienciaAppliaction.apellido" required maxlength="50"/>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary buttonCancelar"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary buttonLogIn"
+                            (click)="onUpdateExperiencia()">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

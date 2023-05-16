@@ -1,0 +1,70 @@
+<div>
+    <ng-container *ngIf="isLogged">
+        <button (click)="bucarporId()" type="button" class="btn btn-primary colorButton"
+            data-bs-toggle="modal" [attr.data-bs-target]=modalTarget data-bs-whatever="@getbootstrap">
+            <span class="iconify" data-icon="ph:pencil-line-duotone"></span>
+        </button>
+    </ng-container>
+
+    <div class="modal fade" id="{{'modal'+data.id.toString()}}" tabindex="-1" aria-labelledby="editarEducacionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editarEducacionLabel">EDITAR EDUCACION <span class="iconify"
+                        data-icon="ph:pencil-line-duotone"></span></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form #form="ngForm" class="needs-validation" novalidate>
+                        <div>
+                            <h2>Educacion</h2>
+                            <div class="mb-3">
+                                <label for="tituloServicio" class="form-label">Título de la Educacion: </label>
+                                <input class="form-control" type="text" id="tituloServicio" name="tituloServicio"
+                                    [(ngModel)]="educacionApplication.titulo" required maxlength="200" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="entidadEducativa"> Nombre de la Entidad Educativa: </label>
+                                <input class="form-control" type="text" id="entidadEducativa" name="entidadEducativa"
+                                    [(ngModel)]="educacionApplication.entidadEducativa" minlength="200" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="inicio">Fecha de Inicio: </label>
+                                <input class="form-control" type="text" id="inicio" name="inicio"
+                                    [(ngModel)]="educacionApplication.inicio" required maxlength="200"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="fin"> Fecha de Finalización: </label>
+                                <input class="form-control" type="text" id="fin" name="fin"
+                                    [(ngModel)]="educacionApplication.fin" required maxlength="200"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="imagenCertificado">Ingrese la URL de la Imagen del certificado: </label>
+                                <input class="form-control" type="text" id="imagenCertificado" name="imagenCertificado"
+                                    [(ngModel)]="educacionApplication.imagenCertificado" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="nombre">Nombre: </label>
+                                <input class="form-control" type="text" id="nombre" name="nombre"
+                                    [(ngModel)]="educacionApplication.nombre" required maxlength="50"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="apellido">Apellido: </label>
+                                <input class="form-control" type="text" id="apellido" name="apellido"
+                                    [(ngModel)]="educacionApplication.apellido" required maxlength="50"/>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary buttonCancelar"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" data-bs-dismiss="modal" class="btn btn-primary buttonLogIn"
+                            (click)="onUpdateEducacion()">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

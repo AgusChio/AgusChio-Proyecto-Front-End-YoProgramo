@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../models/experiencia';
+import { ApplicationExperiencia } from 'src/app/models/application-experiencia';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Experiencia } from '../models/experiencia';
 export class ExperienciaService {
 
   constructor(private http : HttpClient) { }
-  private URL = 'https://backe-end-portafolio.onrender.com/api/servicios'
+  private URL = 'http://localhost:8080/api/servicios'
 
   public getExperiencia(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(`${this.URL}/todosServicios`);
@@ -23,7 +24,9 @@ export class ExperienciaService {
     return this.http.post<Experiencia>(`${this.URL}/agregar`, experiencias);
   }
 
-  public update(id: number, experiencias : Experiencia): Observable<any> {
+  public update(id: number, experiencias :  ApplicationExperiencia): Observable<any> {
+    console.log(experiencias);
+    console.log(id);
     return this.http.put<any>(`${this.URL}/actualizar/${id}`, experiencias);
   }
 
