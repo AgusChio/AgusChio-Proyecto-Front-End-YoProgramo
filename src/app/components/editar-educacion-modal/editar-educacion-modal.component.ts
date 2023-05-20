@@ -34,7 +34,6 @@ export class EditarEducacionModalComponent implements OnInit {
   cargarEducacion(): void {
     this.educacionService.getEducacion().subscribe((educacion) => {
       this.educaciones = educacion;    
-      
     });
   }
 

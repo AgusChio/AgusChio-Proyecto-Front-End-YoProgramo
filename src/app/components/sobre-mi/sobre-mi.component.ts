@@ -5,8 +5,6 @@ import { SobreMi } from 'src/app/models/sobre-mi';
 import { SobreMiService } from 'src/app/services/sobre-mi.service';
 import { TokenService } from 'src/app/services/token.service';
 
-import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-sobre-mi',
@@ -38,39 +36,5 @@ export class SobreMiComponent implements OnInit {
     this.sobreMiService.getSobreMi().subscribe(sobreMi => {
       this.sobreMi = sobreMi[0];
     });
-  }
-
-
-
-  deleteSobreMi(id: number): void {
-    if (id != undefined) {
-      Swal.fire({
-        title: '¿Estás seguro?',
-        text: "¡No podrás deshacer esta acción!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí, borrar',
-        cancelButtonText: 'Cancelar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.sobreMiService.delete(id).subscribe((success) => {
-            Swal.fire(
-              '¡Borrado!',
-              'La experiencia ha sido eliminada.',
-              'success'
-            );
-            this.cargarSobreMi();
-          });
-        } else {
-          Swal.fire(
-            'Cancelado',
-            'La operación de borrado ha sido cancelada.',
-            'info'
-          );
-        }
-      });
-    }
   }
 }

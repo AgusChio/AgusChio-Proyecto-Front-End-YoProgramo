@@ -12,7 +12,7 @@ export class HysService {
 
   constructor(private http: HttpClient) { }
 
-  private URL = 'https://backe-end-portafolio.onrender.com/api/skills';
+  private URL = ' https://backe-end-portafolio.onrender.com/skills';
 
   public getSkills(): Observable<Hys[]> {
     return this.http.get<Hys[]>(`${this.URL}/todasSkills`);
@@ -22,8 +22,8 @@ export class HysService {
     return this.http.get<Hys>(`${this.URL}/${id}`);
   }
 
-  public save(hys: Hys): Observable<Hys> {
-    return this.http.post<Hys>(`${this.URL}/agregar`, hys);
+  public create(hys: ApplicationSkills): Observable<ApplicationSkills> {
+    return this.http.post<ApplicationSkills>(`${this.URL}/agregar`, hys);
   }
 
   public update(id: number, hys: ApplicationSkills): Observable<any> {

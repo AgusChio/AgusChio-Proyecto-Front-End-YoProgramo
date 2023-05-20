@@ -1,8 +1,9 @@
 <div class="background-color font">
     <h2 class="subtitle1 p-5 w-100 d-flex justify-content-center text-light" id="experiencia"> Experiencias </h2>
     <section class="ag-format-container w-100">
+        <app-nueva-experiencia></app-nueva-experiencia>
         <div class="ag-services_box justify-content-center">
-            <div class="ag-services_item d-flex justify-content-center" *ngFor="let Experiencia of experiencia">
+            <div class="ag-services_item d-flex justify-content-center" *ngFor="let Experiencia of experiencias">
                 <div class="ag-services-item_link">
                     <div class="ag-services-item_bg"></div>
                     <div class="ag-services-item_title">
@@ -12,8 +13,10 @@
                         {{ Experiencia.descripcion }}
                     </p>
                 </div>
-                <app-editar-experiencia-modal [id]="Experiencia.id" [data]="Experiencia"></app-editar-experiencia-modal>
-                <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)=" deleteExperiencia(Experiencia.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+                <div class="d-flex">
+                    <app-editar-experiencia-modal [id]="Experiencia.id" [data]="Experiencia" class="me-2"></app-editar-experiencia-modal>
+                    <button *ngIf="isLogged" type="button" class="btn btn-outline-danger"(click)=" deleteExperiencia(Experiencia.id)" style="height: 5vh;"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+                </div>
             </div>
         </div>
     </section>

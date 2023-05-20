@@ -11,7 +11,7 @@ export class SobreMiService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'https://backe-end-portafolio.onrender.com/api/sobreMi'
+  private URL = ' https://backe-end-portafolio.onrender.com/api/sobreMi'
 
   public getSobreMi(): Observable<SobreMi[]> {
     return this.http.get<SobreMi[]>(`${this.URL}/todoSobreMi`);
@@ -21,8 +21,8 @@ export class SobreMiService {
     return this.http.get<SobreMi>(`${this.URL}/${id}`);
   }
 
-  public save(sobreMi : SobreMi): Observable<SobreMi> {
-    return this.http.post<SobreMi>(`${this.URL}/agregar`, sobreMi);
+  public create(sobreMi : ApplicationSobreMi): Observable<ApplicationSobreMi> {
+    return this.http.post<ApplicationSobreMi>(`${this.URL}/agregar`, sobreMi);
   }
 
   public update(id: number, sobreMi : ApplicationSobreMi): Observable<any> {

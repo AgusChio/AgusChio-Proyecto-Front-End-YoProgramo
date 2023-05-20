@@ -24,7 +24,11 @@ import { EditarPersonaModalComponent } from './components/editar-persona-modal/e
 import { EditarProyectosModalComponent } from './components/editar-proyectos-modal/editar-proyectos-modal.component';
 import { EditarExperienciaModalComponent } from './components/editar-experiencia-modal/editar-experiencia-modal.component';
 import { EditarSkillsModalComponent } from './components/editar-skills-modal/editar-skills-modal.component';
-import { EditarEducacionModalComponent } from './components/editar-educacion-modal/editar-educacion-modal.component' ;
+import { EditarEducacionModalComponent } from './components/editar-educacion-modal/editar-educacion-modal.component';
+import { NuevaExperienciaComponent } from './components/nueva-experiencia/nueva-experiencia.component';
+import { NuevaEducacionComponent } from './components/nueva-educacion/nueva-educacion.component';
+import { NuevaSkillComponent } from './components/nueva-skill/nueva-skill.component';
+import { NuevaProyectoComponent } from './components/nueva-proyecto/nueva-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import { EditarEducacionModalComponent } from './components/editar-educacion-mod
     EditarProyectosModalComponent,
     EditarExperienciaModalComponent,
     EditarSkillsModalComponent,
-    EditarEducacionModalComponent
+    EditarEducacionModalComponent,
+    NuevaExperienciaComponent,
+    NuevaEducacionComponent,
+    NuevaSkillComponent,
+    NuevaProyectoComponent
   ],
   imports: [
     BrowserModule,

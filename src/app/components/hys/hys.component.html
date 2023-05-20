@@ -1,4 +1,6 @@
 <div class="container-fluid background-color font text-light" id="skills">
+    <h2 class="subtitle1 text-center p-5 w-100 d-flex justify-content-center mb-5 text-light">Hard & Soft Skills</h2>
+    <app-nueva-skill></app-nueva-skill>
     <div class="w-100">
         <h2 class="subtitle1 text-center p-5 w-100 d-flex justify-content-center mb-5 text-light"> Hard skills</h2>
         <div class="all-circles w-100">
@@ -10,8 +12,10 @@
                     [innerStrokeColor]="skills.colorInterno" 
                     [imageSrc]="skills.imgsrc"></circle-progress>
                     <p class="fw-bold text-center">{{ skills.nombreSkill }}</p>
-                    <app-editar-skills-modal [id]="skills.id" [hardSkills]="hardSkills" [data]="skills"></app-editar-skills-modal>
-                    <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)=" deleteSkills(skills.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+                    <div class="d-flex">
+                        <app-editar-skills-modal [id]="skills.id" [hardSkills]="hardSkills" [data]="skills" class="me-2"></app-editar-skills-modal>
+                        <button *ngIf="isLogged" type="button" class="btn btn-outline-danger"(click)=" deleteSkills(skills.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+                    </div>
             </div>
             </div>
         </div>
@@ -27,8 +31,10 @@
                     [innerStrokeColor]="skills.colorInterno" 
                     [imageSrc]="skills.imgsrc"></circle-progress>
                     <p class="fw-bold text-center">{{ skills.nombreSkill }}</p>
-                    <app-editar-skills-modal [id]="skills.id" [softSkills]="softSkills" [data]="skills"></app-editar-skills-modal>
-                    <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)=" deleteSkills(skills.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+                    <div class="d-flex">
+                        <app-editar-skills-modal [id]="skills.id" [softSkills]="softSkills" [data]="skills" class="me-2"></app-editar-skills-modal>
+                        <button *ngIf="isLogged" type="button" class="btn btn-outline-danger"(click)=" deleteSkills(skills.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+                    </div>                   
             </div>
             </div>
         </div>

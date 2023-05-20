@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { TokenService } from 'src/app/services/token.service';
+import { ApplicationExperiencia } from 'src/app/models/application-experiencia';
+
 
 
 import Swal from 'sweetalert2';
@@ -13,16 +15,18 @@ import Swal from 'sweetalert2';
 })
 export class ExperienciaComponent implements OnInit{
 
-  experiencia!: Experiencia[];
+  experiencias!: Experiencia[];
+  experiencia!: Experiencia;
+  experienciaAppliaction: ApplicationExperiencia = new ApplicationExperiencia("", "", "", "");
 
   constructor(private experienciaServicio: ExperienciaService, private tokenService: TokenService){ }
 
   isLogged = false;
 
   cargarExperiencia(): void {
-    this.experienciaServicio.getExperiencia().subscribe((experiencia) => {
-      this.experiencia = experiencia;
-    });
+    this.experienciaServicio.getExperiencia().subscribe((experiencias) => {
+      this.experiencias = experiencias;
+    });    
   }
 
   ngOnInit(): void {
@@ -52,8 +56,11 @@ export class ExperienciaComponent implements OnInit{
               '¡Borrado!',
               'La experiencia ha sido eliminada.',
               'success'
-            );
-            this.cargarExperiencia();
+            ).then(() => {
+              setTimeout(() => {
+                location.reload();
+              }, 100);
+            });
           });
         } else {
           Swal.fire(

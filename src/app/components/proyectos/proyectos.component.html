@@ -1,5 +1,6 @@
 <div class="container-proyects-portfolio w-100 font background-color">
     <h2 class="subtitle1 p-5 w-100 d-flex justify-content-center mb-5 text-light" id="proyectos"> Proyectos </h2>
+    <app-nueva-proyecto></app-nueva-proyecto>
     <div class="all-cards m-auto d-flex justify-content-center">
         <section class="container-cards-proyects m-3" *ngFor="let Proyecto of proyectos">
             <div class="card background-card-color m-3" >
@@ -21,8 +22,10 @@
                     </div>
                 </div>
             </div>
-            <app-editar-proyectos-modal [id]="Proyecto.id" [data]="Proyecto"></app-editar-proyectos-modal>
-            <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)="deleteExperiencia(Proyecto.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+            <div class="d-flex">
+                <app-editar-proyectos-modal [id]="Proyecto.id" [data]="Proyecto" class="me-2"></app-editar-proyectos-modal>
+                <button *ngIf="isLogged" type="button" class="btn btn-outline-danger"(click)="deleteExperiencia(Proyecto.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+            </div>
         </section>
     </div>
 </div>

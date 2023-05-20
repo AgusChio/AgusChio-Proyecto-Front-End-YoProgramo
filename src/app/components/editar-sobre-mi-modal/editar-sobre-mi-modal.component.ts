@@ -43,7 +43,6 @@ export class EditarSobreMiModalComponent implements OnInit {
   onUpdateSobreMi() {
     this.sobreMiService.update(this.sobreMi.id, this.sobreMiApplication).subscribe(
       (response: any) => { 
-        if (response.status == 200){
           Swal.fire({
             title: 'Sobre mí actualizado',
             icon: 'success',
@@ -53,11 +52,9 @@ export class EditarSobreMiModalComponent implements OnInit {
               location.reload();
             }, 100);
           });
-        }
-      },
+        },
       (error: any) => {
         console.log(error);
-        // Si la respuesta del servidor es un error, muestra un mensaje de error con el mensaje recibido del servidor.
         Swal.fire({
           title: 'Error',
           text: error.error,

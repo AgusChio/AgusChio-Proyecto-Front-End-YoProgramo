@@ -11,7 +11,7 @@ export class EducacionService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'https://backe-end-portafolio.onrender.com/api/educacion'
+  private URL = ' https://backe-end-portafolio.onrender.com/educacion'
 
 
   public getEducacion(): Observable<Educacion[]> {
@@ -22,8 +22,8 @@ export class EducacionService {
     return this.http.get<Educacion>(`${this.URL}/${id}`);
   }
 
-  public save(educaciones : Educacion): Observable<Educacion> {
-    return this.http.post<Educacion>(`${this.URL}/agregar`, educaciones);
+  public create(educaciones : ApplicationEducacion): Observable<ApplicationEducacion> {
+    return this.http.post<ApplicationEducacion>(`${this.URL}/agregar`, educaciones);
   }
 
   public update(id: number, educaciones : ApplicationEducacion): Observable<any> {

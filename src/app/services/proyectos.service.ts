@@ -11,7 +11,7 @@ export class ProyectosService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = 'https://backe-end-portafolio.onrender.com/api/proyectos'
+  private URL = ' https://backe-end-portafolio.onrender.com/api/proyectos'
 
   public getProyectos(): Observable<Proyectos[]> {
     return this.http.get<Proyectos[]>(`${this.URL}/todosProyectos`);
@@ -21,8 +21,8 @@ export class ProyectosService {
     return this.http.get<Proyectos>(`${this.URL}/${id}`);
   }
 
-  public save(proyecto : Proyectos): Observable<Proyectos> {
-    return this.http.post<Proyectos>(`${this.URL}/agregar`, proyecto);
+  public create(proyecto : ApplicationProyectos): Observable<ApplicationProyectos> {
+    return this.http.post<ApplicationProyectos>(`${this.URL}/agregar`, proyecto);
   }
 
   public update(id: number, proyecto : ApplicationProyectos): Observable<any> {

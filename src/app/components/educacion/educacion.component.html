@@ -1,5 +1,6 @@
 <div class="container-certifications background-color font text-light">
     <h2 class="subtitle1 p-3 w-100 d-flex justify-content-center mb-3 text-light" id="educacion"> Educacion </h2>
+    <app-nueva-educacion></app-nueva-educacion>
     <section class="certifications" *ngFor="let Educacion of educacion">
         <div class="container-title-img-certification w-100 d-flex justify-content-center mb-3">
             <div class="class-container-img w-100 d-flex justify-content-center">
@@ -8,12 +9,15 @@
             <h3 class="title-certification text-light p-2 text-center mt-3 mb-3">
                 {{ Educacion.titulo }}
             </h3>
+            <p class="fs-2"> <span class="color2"> Entidad Educativa:</span> {{ Educacion.entidadEducativa }} </p>
             <div class="container-fechas d-flex">
                 <p class="fechas fs-4"><span class="color1"> Inicio: </span> {{ Educacion.inicio }}</p>
                 <p class="fechas fs-4"><span class="color2"> Fin: </span> {{ Educacion.fin }} </p>
             </div>
         </div>
-        <app-editar-educacion-modal [id]="Educacion.id" [data]="Educacion"></app-editar-educacion-modal>
-        <button *ngIf="isLogged" type="button" class="btn btn-sm btn-outline-danger"(click)="deleteEducacion(Educacion.id)"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+        <div class="d-flex">
+            <app-editar-educacion-modal [id]="Educacion.id" [data]="Educacion" class="me-2"></app-editar-educacion-modal>
+            <button *ngIf="isLogged" type="button" class="btn btn-outline-danger"(click)="deleteEducacion(Educacion.id)" style="height: 5vh;"><span class="iconify" data-icon="ph:trash-fill"></span></button>
+        </div>
     </section>
 </div>
