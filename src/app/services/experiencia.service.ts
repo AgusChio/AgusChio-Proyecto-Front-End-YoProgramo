@@ -10,7 +10,7 @@ import { ApplicationExperiencia } from 'src/app/models/application-experiencia';
 export class ExperienciaService {
 
   constructor(private http : HttpClient) { }
-  private URL = ' https://backe-end-portafolio.onrender.com/servicios'
+  private URL = 'https://backe-end-portafolio.onrender.com/api/servicios'
 
   public getExperiencia(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(`${this.URL}/todosServicios`);

@@ -11,7 +11,7 @@ export class SobreMiService {
 
   constructor(private http : HttpClient) { }
 
-  private URL = ' https://backe-end-portafolio.onrender.com/api/sobreMi'
+  private URL = 'https://backe-end-portafolio.onrender.com/api/sobreMi'
 
   public getSobreMi(): Observable<SobreMi[]> {
     return this.http.get<SobreMi[]>(`${this.URL}/todoSobreMi`);
